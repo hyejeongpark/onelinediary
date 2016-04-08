@@ -26,7 +26,9 @@ def hello(request):
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$' , hello),
+    url(r'^$', hello),
+    url(r'^diary/$' , 'diary.views.post_list'),
+    url(r'^diary/(?P<pk>\d+)/$', 'diary.views.post_detail'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

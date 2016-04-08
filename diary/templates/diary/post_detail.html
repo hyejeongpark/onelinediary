@@ -1,0 +1,13 @@
+{% extends "diary/base.html" %}
+{% block content %}
+
+<h2>{{ post.created_at }}</h2>
+<img src="{{ post.photo.url }}">
+<p> {{ post.content }} </p>
+
+<hr>
+<a href="{% url "diary.views.post_list" %}">
+  <p>목록으로</p>
+</a>
+
+{% endblock %}
